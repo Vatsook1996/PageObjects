@@ -1,4 +1,4 @@
-package com.demoga;
+package com.demoga.tests;
 
 import org.junit.jupiter.api.Test;
 
