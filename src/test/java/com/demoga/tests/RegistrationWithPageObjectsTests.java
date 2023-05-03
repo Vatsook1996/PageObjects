@@ -28,10 +28,10 @@ public class RegistrationWithPageObjectsTests extends TestBase{
                 .verifyResult("Gender", "Male")
                 .verifyResult("Mobile", "9000000000")
                 .verifyResult("Date of Birth", "02 April,1996")
-                .verifyResult("Subjects", "Physics")
+                .verifyResult("Subjects", "English")
                 .verifyResult("Hobbies", "Sports")
-                .verifyResult("Picture", "1.png")
+                .verifyResult("Picture", "P-75.png")
                 .verifyResult("Address", "Moscow")
-                .verifyResult("State and City", "Uttar Pradesh Lucknow");
+                .verifyResult("State and City", "Rajasthan Jaiselmer");
  }
 }
