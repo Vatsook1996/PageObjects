@@ -25,7 +25,6 @@ public class RegistrationPage {
             selectCity = $("#city"),
             submitButton = $("#submit");
 
-
     // Actions
     public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -65,7 +64,7 @@ public class RegistrationPage {
 
     public RegistrationPage setBerthDate(String day, String month, String year) {
 
-        dateOfBerthInput.click();
+        dateOfBirthInput.click();
         calendarComponent.setDate(day, month, year);
         return this;
     }
@@ -77,17 +76,17 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setHobbies(String value) {
-        hobbiesInput.$(byText(value)).click();
+        hobbies.$(byText(value)).click();
         return this;
     }
 
     public RegistrationPage setPicture(String file) {
-        picture.uploadFromClasspath(file);
+        uploadPicture.uploadFromClasspath(file);
         return this;
     }
 
     public RegistrationPage setAddress(String value) {
-        addressInput.setValue(value);
+        currentAddressInput.setValue(value);
         return this;
     }
 
@@ -104,7 +103,7 @@ public class RegistrationPage {
     }
 
     public void clickSubmit() {
-        submit.click();
+       submitButton.click();
     }
 
     public RegistrationPage verifyResult(String key, String value) {

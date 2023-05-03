@@ -2,7 +2,6 @@ package com.demoga.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.demoga.pages.RegistrationPage;
-import com.demoga.pages.components.CalendarComponent;
 import org.junit.jupiter.api.BeforeAll;
 public class TestBase {
     RegistrationPage registrationPage = new  RegistrationPage();
