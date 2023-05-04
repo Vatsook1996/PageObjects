@@ -15,12 +15,6 @@ import java.util.concurrent.ThreadLocalRandom;
             return ThreadLocalRandom.current().nextInt(min, max + 1);
         }
 
-        // public static String getRandomItemFromArray(String[] values) {
-        //  int index = getRandomInt(0, values.length - 1);
-
-        //  return values[index];
-        //  }
-
         public static String getRandomCity(String state) {
             String city;
             switch (state) {

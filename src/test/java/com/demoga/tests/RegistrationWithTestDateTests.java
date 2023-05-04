@@ -2,17 +2,14 @@ package com.demoga.tests;
 
 import com.demoga.pages.RegistrationPage;
 import com.github.javafaker.Faker;
-
 import org.junit.jupiter.api.Test;
 
 import static com.demoga.tests.TestData.*;
-import static com.demoga.utils.RandomUtils.getRandomCity;
-import static com.demoga.utils.RandomUtils.getRandomInt;
-import static com.demoqa.utils.RandomUtils.*;
+import static com.demoga.utils.RandomUtils.*;
 public class RegistrationWithTestDateTests extends TestBase{
     RegistrationPage registrationPage = new RegistrationPage();
     Faker faker = new Faker();
-    String firstName = faker.name().firstName(),
+    String  firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             userEmail = faker.internet().emailAddress(),
             userGender = faker.options().option(TestData.gender),
@@ -31,29 +28,29 @@ public class RegistrationWithTestDateTests extends TestBase{
 
         registrationPage.openPage()
                 .removeBanners()
-                .setFirstName("Ivan")
-                .setLastName("Petrov")
-                .setUserEmail("Ivan@mail.com")
-                .setGender("Male")
-                .setNumber("9000000000")
-                .setBerthDate("02", "April", "1996")
-                .setSubjects("English")
-                .setHobbies("Sports")
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setUserEmail(userEmail)
+                .setGender(userGender)
+                .setNumber(userNumber)
+                .setBerthDate(dayOfBirth, monthOfBirth, yearOfBirth)
+                .setSubjects(subject)
+                .setHobbies(hobbies)
                 .setPicture("P-75.png")
-                .setAddress("Moscow")
-                .setState("Rajasthan")
-                .setCity("Jaiselmer")
+                .setAddress(currentAddress)
+                .setState(randomState)
+                .setCity(randomCity)
                 .clickSubmit();
 
-        registrationPage.verifyResult("Student Name", "Ivan Petrov")
-                .verifyResult("Student Email", "Ivan@mail.com")
-                .verifyResult("Gender", "Male")
-                .verifyResult("Mobile", "9000000000")
-                .verifyResult("Date of Birth", "02 April,1996")
-                .verifyResult("Subjects", "English")
-                .verifyResult("Hobbies", "Sports")
+        registrationPage.verifyResult("Student Name", firstName + " " + lastName)
+                .verifyResult("Student Email", userEmail)
+                .verifyResult("Gender", userGender)
+                .verifyResult("Mobile", userNumber)
+                .verifyResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
+                .verifyResult("Subjects", subject)
+                .verifyResult("Hobbies", hobbies)
                 .verifyResult("Picture", "P-75.png")
-                .verifyResult("Address", "Moscow")
-                .verifyResult("State and City", "Rajasthan Jaiselmer");
+                .verifyResult("Address", currentAddress)
+                .verifyResult("State and City", randomState + " " + randomCity);
  }
 }
