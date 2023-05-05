@@ -13,20 +13,23 @@ public class RegistrationWithTestDateTests extends TestBase{
             lastName = faker.name().lastName(),
             userEmail = faker.internet().emailAddress(),
             userGender = faker.options().option(TestData.gender),
+
             userNumber = 89 + faker.phoneNumber().subscriberNumber(8),
             dayOfBirth = String.format("%02d", faker.number().numberBetween(1, 25)),
             monthOfBirth = faker.options().option(months),
             yearOfBirth = String.valueOf(getRandomInt(1956, 2004)),
             subject = faker.options().option(subjects),
             hobbies = faker.options().option(hobbiess),
-            currentAddress = faker.address().streetAddress(),
+            Picture = faker.options().option(picture),
+                    currentAddress= faker.address().streetAddress(),
             randomState = faker.options().option(states),
             randomCity = getRandomCity(randomState);
+
 
         @Test
         void successfulPracticeFormTests() {
 
-        registrationPage.openPage()
+            registrationPage.openPage()
                 .removeBanners()
                 .setFirstName(firstName)
                 .setLastName(lastName)
@@ -36,7 +39,7 @@ public class RegistrationWithTestDateTests extends TestBase{
                 .setBerthDate(dayOfBirth, monthOfBirth, yearOfBirth)
                 .setSubjects(subject)
                 .setHobbies(hobbies)
-                .setPicture("P-75.png")
+                    .setPicture(Picture)
                 .setAddress(currentAddress)
                 .setState(randomState)
                 .setCity(randomCity)
@@ -49,7 +52,7 @@ public class RegistrationWithTestDateTests extends TestBase{
                 .verifyResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
                 .verifyResult("Subjects", subject)
                 .verifyResult("Hobbies", hobbies)
-                .verifyResult("Picture", "P-75.png")
+                .verifyResult("Picture", Picture)
                 .verifyResult("Address", currentAddress)
                 .verifyResult("State and City", randomState + " " + randomCity);
  }

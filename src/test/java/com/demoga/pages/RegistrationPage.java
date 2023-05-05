@@ -19,7 +19,7 @@ public class RegistrationPage {
             dateOfBirthInput = $("#dateOfBirthInput"),
             subjectInput = $("#subjectsInput"),
             hobbies = $("#hobbiesWrapper"),
-            uploadPicture = $("#uploadPicture"),
+            pictureInput = $("#uploadPicture"),
             currentAddressInput = $("#currentAddress"),
             selectState = $("#state"),
             selectCity = $("#city"),
@@ -81,7 +81,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setPicture(String file) {
-        uploadPicture.uploadFromClasspath(file);
+        pictureInput.uploadFromClasspath(file);
         return this;
     }
 
