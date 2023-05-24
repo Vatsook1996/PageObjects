@@ -30,7 +30,7 @@ public class TestBox extends TestBase {
         $(".react-datepicker__day--0" + birthDay).click();
         $("#subjectsInput").setValue("English").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#uploadPicture").uploadFile(new File("src/resources/P-75.png"));
+        $("#uploadPicture").uploadFile(new File("src/test/resources/P-75.png"));
         $("#currentAddress").setValue("Moscow");
         $("#state").click();
         $(byText("Rajasthan")).click();

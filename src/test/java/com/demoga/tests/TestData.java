@@ -11,7 +11,7 @@ public class TestData {
 
     public static String[] states = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
 
-    public static String[] picture = {"P-74.png", "P-75.png"};
+    public static String[] picture = {"P-75.png"};
     public static String[] gender = {"Male", "Female", "Other"};
 
     public static String[] stateNCR = {"Delhi", "Gurgaon", "Noida"};
