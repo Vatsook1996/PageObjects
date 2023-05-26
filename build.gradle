@@ -66,3 +66,15 @@ task remote_test(type: Test) {
         includeTags("remote")
     }
 }
+
+task property_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("property")
+    }
+}
+
+task hello_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("hello")
+    }
+}
