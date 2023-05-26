@@ -30,7 +30,7 @@ public class RegistrationWithTestDateTests extends RemoteTestBase {
             randomState = faker.options().option(states),
             randomCity = getRandomCity(randomState);
 
-    @Tag("properties")
+    @Tag("remote")
     @Test
     @DisplayName("Проверка тестовой формы")
     void practiceFormTest() {
